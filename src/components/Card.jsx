@@ -26,7 +26,7 @@ export default function Card() {
       {!loading ? (
         coinsNames.map((coin) => {
           return (
-            <div className="w-[350px] h-fit rounded-xl overflow-hidden shadow-2xl hover:cursor-pointer hover:box hover:drop-shadow-2xl hover:scale-105">
+            <div className="w-[80%] md:w-[350px] h-fit rounded-xl overflow-hidden shadow-2xl hover:cursor-pointer hover:box hover:drop-shadow-2xl hover:scale-105">
               
                 <img
                   className="h-[45%] w-full bg-contain"

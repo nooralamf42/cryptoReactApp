@@ -10,7 +10,7 @@ export default function Price() {
     getPrice(currency)
   }
   return !loading ? (
-    <form className="w-[450px] mx-auto mb-16 space-y-4"
+    <form className="w-[90%] md:w-[450px] mx-auto mb-16 space-y-4"
       onSubmit={submitHandler}
       >
       <div className="relative">
