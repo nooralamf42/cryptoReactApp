@@ -1,5 +1,6 @@
 import React from "react";
 import useData from "../hooks/useData";
+import "./loader.css";
 
 let coinData = {
   ETH: [
@@ -23,7 +24,7 @@ export default function Card() {
 
   return (
     <div className="flex justify-center gap-8 mb-8 flex-wrap">
-      {!loading ? (
+      {!loading ? apiData.hasOwnProperty("error") ? <h1>{apiData.error.message}</h1> : (
         coinsNames.map((coin) => {
           return (
             <div className="w-[80%] md:w-[350px] h-fit rounded-xl overflow-hidden shadow-2xl hover:cursor-pointer hover:box hover:drop-shadow-2xl hover:scale-105">
@@ -44,7 +45,7 @@ export default function Card() {
           );
         })
       ) : (
-        <p>data is loading</p>
+        <div class="dots mt-20"></div>
       )}
     </div>
   );

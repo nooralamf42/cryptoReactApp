@@ -1,0 +1,65 @@
+.progress {
+   --r1: 154%;
+   --r2: 68.5%;
+   width: 67.2px;
+   height: 67.2px;
+   border-radius: 50%;
+   background: radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,#35c64d 80%) center left,
+        radial-gradient(var(--r1) var(--r2) at bottom,#35c64d 79.5%,#0000 80%) center center,
+        radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,#35c64d 80%) center right,
+        #e3e3e3;
+   background-size: 50.5% 220%;
+   background-position: -100% 0%,0% 0%,100% 0%;
+   background-repeat: no-repeat;
+   animation: progress-mbj53w 2s infinite linear;
+}
+
+@keyframes progress-mbj53w {
+   33% {
+      background-position: 0% 33% ,100% 33% ,200% 33%;
+   }
+
+   66% {
+      background-position: -100%  66%,0%   66% ,100% 66%;
+   }
+
+   100% {
+      background-position: 0% 100%,100% 100%,200% 100%;
+   }
+}
+
+ .dots {
+   width: 56px;
+   height: 13.4px;
+   background: radial-gradient(farthest-side,#343434 90%,#0000) left,
+          radial-gradient(farthest-side,#343434 90%,#0000) right;
+   background-size: 13.4px 13.4px;
+   background-repeat: no-repeat;
+   position: relative;
+}
+
+.dots:before {
+   content: "";
+   position: absolute;
+   width: 13.4px;
+   height: 13.4px;
+   border-radius: 50%;
+   background: #343434;
+   inset: 0;
+   margin: auto;
+   animation: dots-1b2bw7md 1s, dots-bw5o92md 0.5s;
+   animation-timing-function: cubic-bezier(.5,-900,.5,900);
+   animation-iteration-count: infinite;
+}
+
+@keyframes dots-1b2bw7md {
+   100% {
+      transform: translate(0.13px);
+   }
+}
+
+@keyframes dots-bw5o92md {
+   100% {
+      inset: -0.17px 0 0;
+   }
+}
