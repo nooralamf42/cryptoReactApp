@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       animation : {
-        "train" : "train linear 100s infinite"
+        "train" : "train linear 300s infinite"
       },
       keyframes : {
         "train" : {

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const API = "5YvgJt8TPbNZoHFgP8rhUg==Q7QeIklHj019il7q";
 
 export default function useData(getAll, currencyName = "adausdt") {
-  let [currency, setCurrency] = useState({ name: "", price: "" });
+  let [currency, setCurrency] = useState(getAll? {} : { name: "", price: "" });
   const [loading, setLoading] = useState(true);
   const [apiData, setApiData] = useState({});
 
@@ -11,7 +11,7 @@ export default function useData(getAll, currencyName = "adausdt") {
     setLoading(true);
     const url2 = `https://api.api-ninjas.com/v1/cryptoprice?symbol=${currency}`;
     const url1 =
-      "http://api.coinlayer.com/live?access_key=563022619f420c8cf8b9bf9ea0c43992";
+      "https://api.coincap.io/v2/assets";
 
      try{
       let response = await axios({
@@ -28,7 +28,7 @@ export default function useData(getAll, currencyName = "adausdt") {
       });
       let data = await response.data;
       setApiData(data);
-      if (!getAll)
+      if(!getAll)
         setCurrency((pre) => {
           return {
             ...pre,
@@ -37,7 +37,7 @@ export default function useData(getAll, currencyName = "adausdt") {
           };
         })
         else{
-          setCurrency(data.rates)
+          setCurrency(data.data)
         }
       setLoading(false);
      }

@@ -13,7 +13,6 @@ export default function Price() {
       })
   }
   
-  console.log(apiData)
   return !loading ? (
 
     <form className="w-[90%] md:w-[450px] mx-auto mb-16 space-y-4"

@@ -38,7 +38,9 @@ export default function Card() {
               <div className="p-6 space-y-4">
                 <h1 className="text-2xl font-bold">{coin}</h1>
                 <p className="text-gray-600">{coinData[coin][0]}</p>
-                <p className="font-semibold">Price {currency[coin]}</p>
+                <p className="font-semibold">Price {(currency.filter(c=>
+                  c.symbol == coin
+                )[0].priceUsd).slice(0,7)} $</p>
               </div>
             </div>
           );
