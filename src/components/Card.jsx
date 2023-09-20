@@ -20,8 +20,7 @@ let coinData = {
 let coinsNames = Object.keys(coinData);
 
 export default function Card() {
-  let { apiData, loading } = useData(true);
-
+  let { apiData, loading, currency} = useData(true);
   return (
     <div className="flex justify-center gap-8 mb-8 flex-wrap">
       {!loading ? apiData.hasOwnProperty("error") ? <h1>{apiData.error.message}</h1> : (
@@ -39,7 +38,7 @@ export default function Card() {
               <div className="p-6 space-y-4">
                 <h1 className="text-2xl font-bold">{coin}</h1>
                 <p className="text-gray-600">{coinData[coin][0]}</p>
-                <p className="font-semibold">Price {apiData.rates[coin]}</p>
+                <p className="font-semibold">Price {currency[coin]}</p>
               </div>
             </div>
           );

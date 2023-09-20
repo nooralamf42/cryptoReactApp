@@ -3,15 +3,12 @@ import useData from "../hooks/useData";
 import "./loader.css";
 
 export default function Train() {
-  let { apiData, loading, getPrice} = useData(true)
+  let { apiData, loading, currency} = useData(true)
 
-  let coinsData = []
-  if(!loading && !apiData.hasOwnProperty("error")){
     let coins = ["THETA", "BTC", "ADA", "BAT", "XRP", "TRX", "IOST", "OK", "LINK", "LTC", "MANA", "AVAX", "DASH", "DOGE", "ETH"]
-    coinsData = coins.map(coin=>{
-      return `${coin} : ${apiData.rates[coin]}`
+    let coinsData = coins.map(coin=>{
+      return `${coin} : ${currency[coin]}`
     })
-  }
   
     return (
       <div className='w-full text-center'>{

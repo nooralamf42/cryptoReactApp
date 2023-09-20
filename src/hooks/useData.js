@@ -35,7 +35,10 @@ export default function useData(getAll, currencyName = "adausdt") {
             name: data.symbol,
             price: data.price,
           };
-        });
+        })
+        else{
+          setCurrency(data.rates)
+        }
       setLoading(false);
      }
     catch(e){
